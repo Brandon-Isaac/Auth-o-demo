@@ -1,5 +1,9 @@
 import React from "react";
 import { useAuth0 } from "@auth0/auth0-react";
+// import Navbar from "./components/Navbar";
+// import ProfileCard from "./components/Profilecard";
+// import Dashboard from "./components/Dashboard";
+
 
 function App() {
   const { loginWithRedirect, logout, isAuthenticated, user, getAccessTokenSilently } = useAuth0();
@@ -26,6 +30,7 @@ function App() {
         </>
       )}
     </div>
+    
   );
 }
 

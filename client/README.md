@@ -44,5 +44,5 @@ Displays user name, email, and profile picture:
 
 ### 1. Clone the repo
 ```bash
-git clone https://github.com/Brandon-Isaac/auth-0 demo.git
-cd auth-0-demo
+git clone https://github.com/Brandon-Isaac/Auth-o-demo
+cd Auth-o-demo

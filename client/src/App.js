@@ -1,36 +1,24 @@
-import React from "react";
-import { useAuth0 } from "@auth0/auth0-react";
-// import Navbar from "./components/Navbar";
-// import ProfileCard from "./components/Profilecard";
-// import Dashboard from "./components/Dashboard";
-
+import logo from './logo.svg';
+import './App.css';
 
 function App() {
-  const { loginWithRedirect, logout, isAuthenticated, user, getAccessTokenSilently } = useAuth0();
-
-  const callAPI = async () => {
-    const token = await getAccessTokenSilently();
-    const res = await fetch("http://localhost:5000/api/protected", {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    });
-    const data = await res.json();
-    alert(JSON.stringify(data));
-  };
-
   return (
-    <div>
-      {!isAuthenticated && <button onClick={loginWithRedirect}>Log in</button>}
-      {isAuthenticated && (
-        <>
-          <p>Welcome, {user.name}</p>
-          <button onClick={() => logout({ returnTo: window.location.origin })}>Log out</button>
-          <button onClick={callAPI}>Call Protected API</button>
-        </>
-      )}
+    <div className="App">
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          Edit <code>src/App.js</code> and save to reload.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+      </header>
     </div>
-    
   );
 }
 

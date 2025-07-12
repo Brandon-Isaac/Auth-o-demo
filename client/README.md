@@ -1,70 +1,48 @@
-# Getting Started with Create React App
+# 🔐 Auth0 Authentication Demo
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a basic implementation of **Auth0 authentication** in a React application. It demonstrates how to:
 
-## Available Scripts
+- Authenticate users using Auth0
+- Display user information after login
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## 📸 Demo Screenshots
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### 🔑 Login with Auth0
+![Login screen](image.png)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### 👤 User Profile After Login
+Displays user name, email, and profile picture:
+![User profile](image-1.png)
+![Logged in](image-2.png)
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 💡 How Auth0 Works in This App
 
-### `npm run build`
+### 🌐 Frontend (React)
+1. **Auth0Provider** wraps the entire app with authentication context.
+2. When the user clicks **"Log in"**, they are redirected to the Auth0 hosted login page.
+3. After login, Auth0 redirects the user back with an **authorization code**.
+4. The SDK exchanges this code for an **access token** and stores it.
+5. We use the `useAuth0()` hook to:
+   - Get user details (e.g., `user.name`, `user.email`)
+   - Trigger login/logout
+   - Securely fetch the **access token**
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 🛠️ Tech Stack
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- **Frontend**: React, Auth0 React
+- **Auth Provider**: Auth0
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## ⚙️ How to Run the Project
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### 1. Clone the repo
+```bash
+git clone https://github.com/Brandon-Isaac/auth-0 demo.git
+cd auth-0-demo
